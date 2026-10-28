@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit Orchestrator [black-ops]</title>
+  <meta name="description" content="Audit Orchestrator [black-ops] is based on and built for local AI. It works with any local model, from 4B parameters up, and turns your port list into an evidence set. The environment is 100% Dockerizable.">
+  <link rel="icon" href="assets/logo-hydra.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/intro.js"></script>
+</head>
+<body>
+  <div class="intro">
+    <canvas aria-hidden="true"></canvas>
+    <p class="intro-name" aria-hidden="true"></p>
+    <p class="intro-hint" data-i18n="intro.skip">Click or press any key to skip</p>
+  </div>
+  <a class="skip" href="#overview" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <div class="header-start">
+        <div class="versions" role="group" data-i18n-aria="lang.aria" aria-label="Language">
+          <button type="button" data-set-lang="es" lang="es">ES</button>
+          <button type="button" data-set-lang="en" lang="en">EN</button>
+        </div>
+        <a class="brand" href="#overview">
+          <img src="assets/logo-hydra.jpg" data-i18n-alt="brand.alt" alt="Three-headed hydra mark">
+          <span>
+            <strong data-i18n="brand.name">Audit Orchestrator</strong>
+            <span class="brand-tag" data-i18n="brand.tag">[black-ops]</span>
+          </span>
+        </a>
+      </div>
+      <nav class="nav" data-i18n-aria="nav.aria" aria-label="Page">
+        <a href="#overview" data-i18n="nav.overview">Overview</a>
+        <a href="#surface" data-i18n="nav.surface">Surface</a>
+        <a href="#flow" data-i18n="nav.architecture">Architecture</a>
+        <a href="#pieces" data-i18n="nav.pieces">Pieces</a>
+        <a href="#modes" data-i18n="nav.modes">Modes</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="overview">
+      <canvas class="cosmos" aria-hidden="true"></canvas>
+      <div data-r>
+        <p class="kicker" data-i18n="hero.kicker">Local AI</p>
+        <h1 data-i18n="hero.title">Based on and built for local AI. A finding exists only if there is proof.</h1>
+        <p class="lede" data-i18n="hero.lede">It works with any local model. Tested from 4B parameters up, with no upper limit. The entry point is a set of assets and their ports. The software structures the audits and orchestrates them on its own. The result is an evidence report for your whole infrastructure. The environment is 100% Dockerizable.</p>
+        <div class="actions">
+          <a class="btn solid" href="#flow" data-i18n="btn.flow">Watch the flow</a>
+          <a class="btn" href="#modes" data-i18n="btn.modes">Compare the modes</a>
+          <a class="btn" href="#contact" data-i18n="btn.contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-mark" data-r>
+        <p class="mark-title" data-i18n="mark.title">[black-ops]</p>
+        <div class="beast-frame">
+          <img src="assets/logo-hydra.jpg" data-i18n-alt="brand.alt" alt="Three-headed hydra mark">
+          <span class="eye eye-a" aria-hidden="true"></span>
+          <span class="eye eye-b" aria-hidden="true"></span>
+          <span class="eye eye-c" aria-hidden="true"></span>
+          <i class="hud tl" aria-hidden="true"></i>
+          <i class="hud tr" aria-hidden="true"></i>
+          <i class="hud bl" aria-hidden="true"></i>
+          <i class="hud br" aria-hidden="true"></i>
+        </div>
+      </div>
+      <figure class="hero-figure" data-r>
+        <img src="assets/hero-hood.jpg" data-i18n-alt="hood.alt" alt="Hooded figure seen from behind in a dark server room lit in red and purple">
+        <figcaption data-i18n="hood.caption">Built to run on its own, with 100% confidentiality and limited hardware.</figcaption>
+      </figure>
+    </div>
+
+    <section data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="board.kicker">The committee's security questions</p>
+        <h2 data-i18n="board.title">One place to answer them, at zero cost</h2>
+        <div class="grid three">
+          <article class="card">
+            <p class="num">01</p>
+            <h3 data-i18n="board.1.title">Are many services exposed?</h3>
+            <p data-i18n="board.1.body">Web, databases, remote access, file shares, directory, mail, and the port that still has no name.</p>
+          </article>
+          <article class="card">
+            <p class="num">02</p>
+            <h3 data-i18n="board.2.title">Do we have enough time to analyze them?</h3>
+            <p data-i18n="board.2.body">Several hosts and several ports can move at once, inside a cap you set. On one port, the checks follow the catalog order.</p>
+          </article>
+          <article class="card">
+            <p class="num">03</p>
+            <h3 data-i18n="board.3.title">Is our audit 100% confidential?</h3>
+            <p data-i18n="board.3.body">The inventory, the command output, and the findings can stay on the customer's network. That choice is the deployment, and a closed deployment is possible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="architecture">
+    <section id="surface" data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="surface.kicker">Surface</p>
+        <h2 data-i18n="surface.title">A personal pentester, ready to analyze your exposed attack surface</h2>
+        <p class="lede" data-i18n="surface.lede">The knowledge source is a Neo4j graph database. In mode 2 and mode 3 runs, the LLM takes control: it reads the results and acts when that is required.</p>
+        <div class="chips" style="margin-top:1rem">
+          <span class="chip" data-i18n="chip.web">Web</span>
+          <span class="chip" data-i18n="chip.db">Databases</span>
+          <span class="chip" data-i18n="chip.remote">Remote access</span>
+          <span class="chip" data-i18n="chip.windows">Windows and file services</span>
+          <span class="chip" data-i18n="chip.id">Identity and directory</span>
+          <span class="chip" data-i18n="chip.dns">Name service</span>
+          <span class="chip" data-i18n="chip.mon">Monitoring</span>
+          <span class="chip" data-i18n="chip.files">Network files</span>
+          <span class="chip" data-i18n="chip.mail">Mail</span>
+          <span class="chip" data-i18n="chip.unknown">Unidentified service</span>
+        </div>
+        <p class="note" data-i18n="surface.note">An unidentified service is recognized first. The order comes from the catalog.</p>
+      </div>
+    </section>
+
+    <section id="flow" data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="arch.kicker">Architecture</p>
+        <h2 data-i18n="arch.title">A constant-flow audit, running on your own machine with limited resources</h2>
+        <p class="lede" data-i18n="arch.lede">System architecture: the agent and the local model talk both ways. The agent and the orchestrator talk both ways. A queue sends work to the Dockerized Kali MCP. Three streams leave Kali for the servers under audit. The environment is 100% Dockerizable. Execution has been tested from Cline in Visual Studio Code, cline-cli, Codex, and OpenClaw.</p>
+        <figure class="flow">
+          <img src="Audit-Orchestrator-V2-flujo-continuo_v2.gif" data-i18n-alt="gif.alt" alt="Animated diagram: user console, agent, local model, audit orchestrator, Kali, and three target servers, with moving dots">
+          <figcaption data-i18n="gif.caption">Continuous flow of Audit Orchestrator.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="what.kicker">How is this possible with a local model?</p>
+        <h2 data-i18n="what.title">An asset inventory goes in. An evidence report comes out.</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3 data-i18n="what.in.title">What comes in</h3>
+            <p data-i18n="what.in.body">A set of ports and assets.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="what.mid.title">It moves only when there is a reason</h3>
+            <p data-i18n="what.mid.body">Each service opens its own path. The next step does not fire blind: it starts when the previous one left a reason, such as a version or an open login.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="what.out.title">You leave with the proof</h3>
+            <p data-i18n="what.out.body">A log, the real command output, and the findings. If a report cannot copy the proof, it is not stored. The live console shows the run before it closes.</p>
+          </article>
+        </div>
+        <p class="note" data-i18n="what.note">It stays on your network. This is not a cloud scanner. The finding arrives with proof, and the decision to accept or fix the risk stays yours. We do not sell zero false positives, a coverage percentage, or a fixed audit time.</p>
+      </div>
+    </section>
+
+    <section id="pieces" data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="pieces.kicker">Six pieces</p>
+        <h2 data-i18n="pieces.title">The same catalog in every mode</h2>
+        <div class="pieces">
+          <article class="piece">
+            <p class="num" data-i18n="piece.inventory">Inventory</p>
+            <h3 data-i18n="piece.inventory.title">The port file</h3>
+            <p data-i18n="piece.inventory.body">Hosts and open ports. Nmap does not run the audit. It only supplies the list.</p>
+          </article>
+          <article class="piece">
+            <p class="num" data-i18n="piece.catalog">Catalog</p>
+            <h3 data-i18n="piece.catalog.title">Neo4j, local, in Docker</h3>
+            <p data-i18n="piece.catalog.body">Each service family has an ordered list of checks. The next check waits for a condition from the one before it.</p>
+          </article>
+          <article class="piece">
+            <p class="num" data-i18n="piece.conductor">Conductor</p>
+            <h3 data-i18n="piece.conductor.title">State machine</h3>
+            <p data-i18n="piece.conductor.body">It walks the catalog. It does not fire every check blindly. It follows the path the results open.</p>
+          </article>
+          <article class="piece">
+            <p class="num" data-i18n="piece.workshop">Workshop</p>
+            <h3 data-i18n="piece.workshop.title">Kali, on your network</h3>
+            <p data-i18n="piece.workshop.body">Checks run through a local HTTP API written in Python and Flask. That traffic does not go to a vendor.</p>
+          </article>
+          <article class="piece">
+            <p class="num" data-i18n="piece.archive">Archive</p>
+            <h3 data-i18n="piece.archive.title">Log and files</h3>
+            <p data-i18n="piece.archive.body">Every output is kept, with a log. SQLite holds the audit state. The live console shows the run.</p>
+          </article>
+          <article class="piece">
+            <p class="num" data-i18n="piece.reviewer">Reviewer</p>
+            <h3 data-i18n="piece.reviewer.title">Modes 2 and 3 only</h3>
+            <p data-i18n="piece.reviewer.body">A language model reads a clip of each output. Temperature is fixed at 0. It may use only lines from that file.</p>
+          </article>
+        </div>
+        <p class="note" data-i18n="pieces.note">The model does not replace the catalog. In mode 2 and mode 3 runs, the LLM takes control.</p>
+      </div>
+    </section>
+
+    <section id="modes" data-r>
+      <div class="wrap">
+        <p class="kicker" data-i18n="modes.kicker">Three modes</p>
+        <h2 data-i18n="modes.title">One road. Three ways to run.</h2>
+        <div class="modes">
+          <article class="mode">
+            <p class="num" data-i18n="mode.1">Mode 1</p>
+            <h3 data-i18n="mode.1.title">Automatic</h3>
+            <p data-i18n="mode.1.body">The LLM acts only at the start and at the end of the audit. It can call the MCP to stop the run, update the status, or extract the findings.</p>
+            <p data-i18n="mode.1.note">The audit moves on its own. The model steps in to open it, close it, and bring the result back.</p>
+          </article>
+          <article class="mode">
+            <p class="num" data-i18n="mode.2">Mode 2</p>
+            <h3 data-i18n="mode.2.title">After the host</h3>
+            <p data-i18n="mode.2.body">It follows the mode 1 flow, and the LLM takes control once the exposed-surface audit of a host is finished.</p>
+            <p data-i18n="mode.2.note">The same automatic start. The model takes the lead when each host is done.</p>
+          </article>
+          <article class="mode">
+            <p class="num" data-i18n="mode.3">Mode 3</p>
+            <h3 data-i18n="mode.3.title">On every service</h3>
+            <p data-i18n="mode.3.body">The LLM takes control for each service.</p>
+            <p data-i18n="mode.3.note">The deepest option: the model in charge of every service.</p>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="col.mode">Mode</th>
+                <th data-i18n="col.adds">What it adds</th>
+                <th data-i18n="col.needs">What it needs</th>
+                <th data-i18n="col.when">When to choose it</th>
+                <th data-i18n="col.not">What it does not do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Mode" data-i18n-label="col.mode"><strong data-i18n="row.1.mode">1 · Automatic</strong></td>
+                <td data-label="What it adds" data-i18n-label="col.adds" data-i18n="row.1.adds">The LLM acts only at the start and at the end. It can call the MCP to stop the audit, update the status, or extract findings.</td>
+                <td data-label="What it needs" data-i18n-label="col.needs" data-i18n="row.1.needs">Linux, Python 3.11 or newer, Neo4j in Docker, the Kali workshop, the inventory file.</td>
+                <td data-label="When to choose it" data-i18n-label="col.when" data-i18n="row.1.when">You want the audit to run on its own, with the model only opening and closing it.</td>
+                <td data-label="What it does not do" data-i18n-label="col.not" data-i18n="row.1.not">The LLM does not take control during the run.</td>
+              </tr>
+              <tr>
+                <td data-label="Mode" data-i18n-label="col.mode"><strong data-i18n="row.2.mode">2 · After the host</strong></td>
+                <td data-label="What it adds" data-i18n-label="col.adds" data-i18n="row.2.adds">The mode 1 flow, and the LLM takes control when a host’s exposed-surface audit is finished.</td>
+                <td data-label="What it needs" data-i18n-label="col.needs" data-i18n="row.2.needs">Everything in mode 1, plus a local model.</td>
+                <td data-label="When to choose it" data-i18n-label="col.when" data-i18n="row.2.when">You want the same run, and the model in charge when each host closes.</td>
+                <td data-label="What it does not do" data-i18n-label="col.not" data-i18n="row.2.not">It does not take control service by service.</td>
+              </tr>
+              <tr>
+                <td data-label="Mode" data-i18n-label="col.mode"><strong data-i18n="row.3.mode">3 · Per service</strong></td>
+                <td data-label="What it adds" data-i18n-label="col.adds" data-i18n="row.3.adds">The LLM takes control for each service.</td>
+                <td data-label="What it needs" data-i18n-label="col.needs" data-i18n="row.3.needs">The same as mode 2.</td>
+                <td data-label="When to choose it" data-i18n-label="col.when" data-i18n="row.3.when">You want the greatest depth, with the model on every service.</td>
+                <td data-label="What it does not do" data-i18n-label="col.not" data-i18n="row.3.not">It does not wait for the host to finish before it steps in.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" data-i18n="modes.note">The more powerful your model, the better the results. The basic model is already covered.</p>
+      </div>
+    </section>
+
+    </section>
+  </main>
+
+  <footer id="contact" data-r>
+    <div class="wrap footer-grid">
+      <img src="assets/logo-hydra.jpg" alt="">
+      <div>
+        <p class="kicker" data-i18n="contact.kicker">Contact</p>
+        <h2 data-i18n="contact.title">Write to f0ns1</h2>
+        <p class="note" data-i18n="contact.before">If you are interested in running your PoC, you have questions setting up your environment, or you want to collaborate, contact me.</p>
+        <div class="contact-links">
+          <a class="mail" data-contact-email href="mailto:change-me@example.com">change-me@example.com</a>
+          <a class="mail" data-contact-linkedin data-i18n="contact.linkedin" href="https://es.linkedin.com/in/ildefonso-gonz%C3%A1lez-s%C3%A1nchez-0b693555" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <p class="note"><span data-i18n="footer.brand">Audit Orchestrator [black-ops]</span><br><span data-i18n="footer.tag">Built for local AI</span></p>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
